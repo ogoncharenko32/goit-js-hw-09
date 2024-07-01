@@ -1,4 +1,4 @@
-const formData = { email: '', message: '' };
+let formData = { email: '', message: '' };
 const form = document.querySelector('.feedback-form');
 const email = form.elements.email;
 const message = form.elements.message;
@@ -9,11 +9,11 @@ const data = JSON.parse(localStorage.getItem(localStorageKey));
 if (data) {
   email.value = data.email;
   message.value = data.message;
+  formData = data;
 }
 
 form.addEventListener('input', evt => {
   formData[evt.target.name] = evt.target.value;
-  console.log('🚀 ~ formData:', formData);
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 });
 
