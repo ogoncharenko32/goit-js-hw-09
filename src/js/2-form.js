@@ -28,8 +28,6 @@ form.addEventListener('submit', evt => {
   form.reset();
 });
 
-// Styles
-
 const formInput = document.querySelectorAll('.feedback-form input');
 
 for (const i of formInput) {
